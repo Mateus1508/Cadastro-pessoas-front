@@ -2,11 +2,11 @@ import styles from './tableAddress.module.css';
 
 const TableAddress = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <input type="hidden" name="endereço" value='' />
 
             <div className={styles.inputBox}>
-                <label htmlFor="tipo">Tipo de endereço</label>
+                <label className={styles.inputTitle} htmlFor="tipo">Tipo de endereço</label>
                 <select name="tipo" id="">
                     <option value="residencial">Residencial</option>
                     <option value="comercial">Comercial</option>
@@ -14,37 +14,37 @@ const TableAddress = () => {
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="endereço"><span>*</span>Endereço</label>
+                <label className={styles.inputTitle} htmlFor="endereço"><span>*</span>Endereço</label>
                 <input type="text" name="endereço" />
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="numero">Número</label>
+                <label className={styles.inputTitle} htmlFor="numero">Número</label>
                 <input type="text" name="numero" />
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="complemento">Complemento</label>
+                <label className={styles.inputTitle} htmlFor="complemento">Complemento</label>
                 <input type="text" name="complemento" />
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="bairro"><span>*</span>Bairro</label>
+                <label className={styles.inputTitle} htmlFor="bairro"><span>*</span>Bairro</label>
                 <input type="text" name="bairro" />
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="cep"><span>*</span>CEP</label>
+                <label className={styles.inputTitle} htmlFor="cep"><span>*</span>CEP</label>
                 <input type="text" name="cep" />
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="cidade"><span>*</span>Cidade</label>
+                <label className={styles.inputTitle} htmlFor="cidade"><span>*</span>Cidade</label>
                 <input type="text" name="cidade" />
             </div>
 
             <div className={styles.inputBox}>
-                <label htmlFor="uf"><span>*</span>UF</label>
+                <label className={styles.inputTitle} htmlFor="uf"><span>*</span>UF</label>
                 <input type="text" name="uf" />
             </div>
         </div>

@@ -16,17 +16,29 @@
   padding: 0 0 100px 0;
 }
 
+.inputBox {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
 .searchBox {
   display: flex;
   gap: 20px;
   padding-bottom: 50px;
+  align-items: end;
 }
 
 .addButton {
-  margin: 0 100px;
-  padding: 5px 10px;
-  background-color: aqua;
+  border: none;
   border-radius: 5px;
-  color: black;
+  background-color: #003566;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 9.5px;
+  min-width: 100px;
+  width: max-content;
+  height: max-content;
   ;
 }

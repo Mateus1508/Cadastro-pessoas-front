@@ -1,5 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 520px;
+}
+
 .inputBox {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+}
+
+.inputTitle {
+    margin: 15px 0;
 }

@@ -5,21 +5,35 @@
     padding: 20px 0;
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 .form {
     display: flex;
-    max-width: 50vw;
-    flex-wrap: wrap;
     padding: 50px 0;
-    gap: 50px;
+    width: max-content;
+    gap: 10px;
 }
 
 .inputBox {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+}
+
+.inputTitle {
+    margin: 15px 0;
 }
 
 .formSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: end;
+}
+
+.enderecoSection {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

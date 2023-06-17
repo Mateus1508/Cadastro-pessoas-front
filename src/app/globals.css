@@ -100,6 +100,22 @@ a {
   text-decoration: none;
 }
 
+input,
+select {
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #003566;
+  border-radius: 5px;
+  background-color: #aaaaaa;
+  color: #000000;
+}
+
+span {
+  color: red;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
