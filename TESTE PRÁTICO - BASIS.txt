@@ -1,0 +1,27 @@
+Elaborar um cadastro de pessoa física ou jurídica.
+
+Ao entrar na tela devemos ter uma pesquisa por nome, um botão pesquisar e outro adicionar.
+Ao clicar em pesquisar os valores serão apresentados no grid com todos os campos do formulário, no grid terá um botão excluir e editar. 
+Ao clicar em excluir, deverá apresentar um confirmação: Deseja excluir esse usuário: Sim ou Não, Sim confirma a exclusão e atualiza a grid e não cancela o evento.
+Ao clicar em editar, deverá direcionar pra tela de formulário com os campos preenchidos pra edição.
+Ao clicar em adicionar deverá ser direcionado para o formulário com os seguintes campos:
+
+*Tipo de pessoa: física, jurídica.
+Caso escolha Pessoa Física:
+*Nome, *CPF 
+Caso escolha Pessoa Jurídica:
+*Razão social, *CNPJ
+
+Campos em comuns:
+*DDD/telefone, e-mail 
+
+O mesmo poderá ter mais de um endereço, sendo possível escolher o tipo de endereço: residencial ou comercial.
+*Tipo de endereço, *Endereço, Número, Complemento, *Bairro, *CEP, *Cidade, *UF.
+
+Os campos com * devem ser obrigatórios.
+Os campos devem possuir suas respectivas máscaras e validações de campo obrigatórios e CPF e CNPJ tem que ser válidos.
+No caso do endereço, deve existir um botão adicionar endereço.
+Ao adicionar um endereço deve existir um botão remover, caso queira remover algum endereço cadastrado.
+Os dados pessoais e de endereço devem ficar no mesmo formulário.
+
+Ao salvar o sistema deverá apresentar uma mensagem salvo com sucesso e voltar para grid da tela inicial.

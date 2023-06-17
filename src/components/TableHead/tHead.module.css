@@ -1,0 +1,11 @@
+.tHead {
+    display: flex;
+}
+
+.edit {
+    color: green;
+}
+
+.delete {
+    color: red;
+}
