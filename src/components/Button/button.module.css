@@ -9,4 +9,5 @@
     min-width: 100px;
     width: max-content;
     height: max-content;
+    cursor: pointer;
 }

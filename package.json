@@ -13,10 +13,12 @@
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
     "axios": "^1.4.0",
+    "cpf-cnpj-validator": "^1.0.3",
     "eslint-config-next": "13.4.6",
     "next": "13.4.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.9.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.13.0",
