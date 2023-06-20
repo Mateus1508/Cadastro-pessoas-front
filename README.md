@@ -6,9 +6,9 @@ Para rodar, digite o seguinte comando no seu terminal:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
 ```
 
