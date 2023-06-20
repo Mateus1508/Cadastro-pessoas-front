@@ -1,8 +1,9 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 520px;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+
 }
 
 .inputBox {
@@ -12,4 +13,23 @@
 
 .inputTitle {
     margin: 15px 0;
+}
+
+.subTitle {
+    margin: 15px 0;
+}
+
+.btnSection {
+    display: flex;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    cursor: pointer;
+    align-self: center;
 }

@@ -8,12 +8,16 @@
 .content {
     display: flex;
     flex-direction: column;
+
 }
 
 .form {
+    flex-direction: column;
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 50px 0;
-    width: max-content;
+    width: 100%;
     gap: 10px;
 }
 
@@ -29,18 +33,50 @@
 .formSection {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    align-items: end;
+    align-items: center;
 }
 
 .enderecoSection {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.enderecoBox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.subTitle {
+    margin: 15px 0;
+    text-align: center;
 }
 
 .formTitle {
     width: 100%;
     padding: 20px 0;
     display: flex;
+}
+
+.link {
+    border: none;
+    border-radius: 5px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 14px;
+    margin: 0 10px;
+    font-weight: bold;
+    padding: 10px;
+    min-width: 100px;
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
 }

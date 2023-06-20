@@ -4,6 +4,7 @@
     background-color: var(--btn-bg);
     color: var(--btn-text);
     font-size: 14px;
+    margin: 0 10px;
     font-weight: bold;
     padding: 10px;
     min-width: 100px;

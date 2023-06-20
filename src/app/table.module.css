@@ -9,9 +9,10 @@
 .tableContainer {
   display: flex;
   width: 98vw;
-  overflow: auto;
+  height: 50vh;
   padding: 1px;
   margin: 10px;
+  overflow: auto;
   background-color: transparent;
   border: 1px solid white;
   box-shadow: 0 0 10px #cccccccc;
@@ -23,7 +24,6 @@
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
-  max-height: 100%;
   box-shadow: 0 0 30px var(--background-color);
 }
 

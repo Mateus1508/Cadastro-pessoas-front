@@ -1,31 +1,33 @@
 'use client'
 
-import TableHead from '@/components/TableHead/TableHead'
+import TableHeadFoot from '@/components/TableHeadFoot/TableHeadFoot'
 import styles from './table.module.css'
 import TableBody from '@/components/TableBody/TableBody'
 import Button from '@/components/Button/Button'
 import React from 'react'
 import api from '@/services/api'
-import { Pessoa } from '@/types/Pessoa'
+import { Person } from '@/types/Person'
 
 const Home = () => {
-	const [pessoa, setPessoa] = React.useState<Pessoa[]>();
+	const [pessoa, setPerson] = React.useState<Person[]>();
+	const [filter, setFilter] = React.useState<Person[]>();
 	const [search, setSearch] = React.useState<string>();
 
 
 	React.useEffect(() => {
 		api.get('/pessoa')
 			.then((res) => {
-				setPessoa(res.data);
+				setPerson(res.data);
+				setFilter(res.data);
 			})
 			.catch(
 				(erro) => window.alert(`Erro ao exibir tabela. ${erro}`)
 			);
-	}, []);
+	}, [pessoa]);
 
 	const handleSearchByName = () => {
-		const filteredByName = pessoa?.filter((repos: Pessoa) => repos.nome_RazaoSocial.toLowerCase().includes(search?.toLowerCase() ?? ''));
-		setPessoa(filteredByName);
+		const filteredByName = pessoa?.filter((repos: Person) => repos.nome_RazaoSocial.toLowerCase().includes(search?.toLowerCase() ?? ''));
+		setFilter(filteredByName);
 	}
 
 	return (
@@ -40,8 +42,9 @@ const Home = () => {
 			</section>
 			<div className={styles.tableContainer}>
 				<table className={styles.table}>
-					<TableHead />
-					<TableBody data={pessoa} />
+					<TableHeadFoot />
+					<TableBody data={filter} />
+					<TableHeadFoot />
 				</table>
 			</div>
 		</main>

@@ -1,11 +1,11 @@
-import { Endereco } from './Endereco';
+import { Address } from './Address';
 
-export type Pessoa = {
+export type Person = {
     id?: number;
     cpF_CNPJ: string;
     tipoPessoa: 'Física' | 'Jurídica';
     nome_RazaoSocial: string;
     telefone: string;
     email: string;
-    endereco: Endereco[];
+    endereco: Address[];
 }

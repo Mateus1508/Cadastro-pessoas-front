@@ -1,4 +1,4 @@
-export type Endereco = {
+export type Address = {
     id?: number;
     pessoaId?: number;
     tipoEndereco: 'Residencial' | 'Comercial';

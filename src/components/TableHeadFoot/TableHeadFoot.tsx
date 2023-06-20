@@ -1,5 +1,5 @@
 import styles from './tHead.module.css'
-const TableHead = () => {
+const TableHeadFoot = () => {
   return (
     <thead className={styles.tHead}>
       <tr>
@@ -8,6 +8,7 @@ const TableHead = () => {
         <th>CPF/CNPJ</th>
         <th>DDD/Telefone</th>
         <th>Email</th>
+        <th>Tipo endereço</th>
         <th>Endereço</th>
         <th>Número</th>
         <th>Complemento</th>
@@ -22,4 +23,4 @@ const TableHead = () => {
   )
 }
 
-export default TableHead
+export default TableHeadFoot

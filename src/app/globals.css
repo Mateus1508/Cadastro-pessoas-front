@@ -50,7 +50,7 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #023e8a;
+  background: #ffffff;
   border-radius: 10px;
 }
 
@@ -75,11 +75,8 @@ tbody tr:hover {
   transition: .5s ease-in;
 }
 
-tbody tr:last-of-type {
-  border-bottom: 3px solid var(--title-color);
-}
-
 th {
+  background-color: var(--title-color);
   position: sticky;
   top: 0;
 }
