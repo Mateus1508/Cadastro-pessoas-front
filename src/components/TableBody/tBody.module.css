@@ -1,12 +1,9 @@
-.tBody {
-    display: flex;
-}
-
 .icon {
     cursor: pointer;
 }
 
 .td {
+    display: flex;
+    flex-direction: column;
     padding: 5px;
-    border: 1px 0 1px 0;
 }

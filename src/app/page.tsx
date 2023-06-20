@@ -3,7 +3,6 @@
 import TableHead from '@/components/TableHead/TableHead'
 import styles from './table.module.css'
 import TableBody from '@/components/TableBody/TableBody'
-import Link from 'next/link'
 import Button from '@/components/Button/Button'
 import React from 'react'
 import api from '@/services/api'
@@ -19,6 +18,9 @@ const Home = () => {
 			.then((res) => {
 				setPessoa(res.data);
 			})
+			.catch(
+				(erro) => window.alert(`Erro ao exibir tabela. ${erro}`)
+			);
 	}, []);
 
 	const handleSearchByName = () => {
@@ -35,12 +37,13 @@ const Home = () => {
 					<input type="text" name="nome" onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)} />
 				</div>
 				<Button children='Pesquisar' onClick={() => handleSearchByName()} />
-				<Link className={styles.addButton} href={'/register'}>Adicionar nova pessoa</Link>
 			</section>
-			<table className={styles.table}>
-				<TableHead />
-				<TableBody data={pessoa} />
-			</table>
+			<div className={styles.tableContainer}>
+				<table className={styles.table}>
+					<TableHead />
+					<TableBody data={pessoa} />
+				</table>
+			</div>
 		</main>
 	)
 }

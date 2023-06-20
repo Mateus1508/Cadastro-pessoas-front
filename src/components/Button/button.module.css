@@ -1,8 +1,8 @@
 .button {
     border: none;
     border-radius: 5px;
-    background-color: #003566;
-    color: #ffffff;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
     font-size: 14px;
     font-weight: bold;
     padding: 10px;

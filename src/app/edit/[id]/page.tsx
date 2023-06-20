@@ -1,15 +1,21 @@
 'use client'
 
 import React from 'react';
+import styles from './edit.module.css';
 import TableAddress from '@/components/TableAddress/TableAddress';
 import { Endereco } from '@/types/Endereco';
 import { Pessoa } from '@/types/Pessoa';
 import { maskCpfCnpj } from '@/utils/maskCpfCnpj';
 import { validateCpfCnpj } from '@/utils/validateCpfCnpj';
+import { useParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import api from '@/services/api';
-import Button from '@/components/Button/Button';
+import Link from 'next/link';
 
-const RegisterPeople = () => {
+const EditPeople = () => {
+    const { id } = useParams();
+    const router = useRouter();
+
     const [formData, setFormData] = React.useState<Pessoa>({
         cpF_CNPJ: '',
         tipoPessoa: 'Física',
@@ -18,6 +24,17 @@ const RegisterPeople = () => {
         email: '',
         endereco: [],
     });
+
+    React.useEffect(() => {
+        api.get(`pessoa/${id}`)
+            .then((res) => {
+                setFormData(res.data);
+                console.log(res.data.tipoPessoa)
+            })
+            .catch(
+                (erro) => window.alert(`Erro ao retornar dados da pessoa: ${erro}`)
+            );
+    }, [])
 
     const handleChangeField = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFormData((prevFormData) => ({
@@ -29,10 +46,7 @@ const RegisterPeople = () => {
     const handleAddAddress = () => {
         setFormData((prevFormData) => ({
             ...prevFormData,
-            endereco: [...prevFormData.endereco,
-            {
-                tipoEndereco: 'Residencial',
-            } as Endereco],
+            endereco: [...prevFormData.endereco, {} as Endereco],
         }));
     };
 
@@ -40,11 +54,11 @@ const RegisterPeople = () => {
         const { name, value } = e.target;
         setFormData((prevFormData) => {
             const newEndereco = [...prevFormData.endereco];
+            console.log(newEndereco);
             newEndereco[index] = {
                 ...newEndereco[index],
                 [name]: name === 'numero' ? parseInt(value) : value,
             };
-            console.log(newEndereco)
             return {
                 ...prevFormData,
                 endereco: newEndereco,
@@ -60,8 +74,7 @@ const RegisterPeople = () => {
         else {
             console.log(formData)
             try {
-                await api.post('/pessoa', formData);
-                window.alert('Pessoa cadastrada com sucesso!');
+                await api.put(`/pessoa/${id}`, formData);
                 setFormData({
                     cpF_CNPJ: '',
                     tipoPessoa: 'Física',
@@ -70,16 +83,16 @@ const RegisterPeople = () => {
                     email: '',
                     endereco: [],
                 });
+                router.push('/')
             } catch (error) {
-                window.alert('Erro ao cadastrar pessoa.');
-                console.log(error);
+                window.alert(`Erro ao editar pessoa ${error}`);
             }
         }
     };
 
     return (
         <div>
-            <h1>Cadastre uma pessoa</h1>
+            <h1>Editar pessoa</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="tipoPessoa">Tipo de pessoa</label>
@@ -109,14 +122,15 @@ const RegisterPeople = () => {
                     {formData.endereco.map((endereco, index) => (
                         <TableAddress key={index} index={index} endereco={endereco} onChangeField={handleAddressInputChange} />
                     ))}
-                    <Button type='button' onClick={handleAddAddress}>
+                    <button type="button" onClick={handleAddAddress}>
                         Adicionar endereço
-                    </Button>
+                    </button>
                 </div>
-                <Button type="submit">Salvar</Button>
+                <button type="submit">Salvar</button>
+                <Link href='/' type="submit">Voltar</Link>
             </form>
         </div>
     );
 };
 
-export default RegisterPeople;
+export default EditPeople;

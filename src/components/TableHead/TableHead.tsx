@@ -1,10 +1,10 @@
 import styles from './tHead.module.css'
 const TableHead = () => {
   return (
-    <thead >
-      <tr className={styles.tHead}>
-        <th>Tipo</th>
-        <th>Nome/Razão social</th>
+    <thead className={styles.tHead}>
+      <tr>
+        <th style={{ width: '100px' }}>Tipo</th>
+        <th style={{ width: '200px' }}>Nome/Razão social</th>
         <th>CPF/CNPJ</th>
         <th>DDD/Telefone</th>
         <th>Email</th>
@@ -15,8 +15,8 @@ const TableHead = () => {
         <th>Cidade</th>
         <th>CEP</th>
         <th>UF</th>
-        <th className={styles.edit}>Editar</th>
-        <th className={styles.delete}>Excluir</th>
+        <th>Editar</th>
+        <th className='tdDelete'>Excluir</th>
       </tr>
     </thead>
   )
